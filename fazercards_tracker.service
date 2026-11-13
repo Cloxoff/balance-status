@@ -1,0 +1,15 @@
+[Unit]
+Description=FazerCards Price Tracker Telegram Bot
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/fazercards_tracker
+ExecStart=/opt/fazercards_tracker/venv/bin/python main.py
+Restart=always
+RestartSec=10
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
